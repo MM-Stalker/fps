@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://шайлушай кр.png" type="Texture" id=1]
+[ext_resource path="res://Red.gd" type="Script" id=2]
+[ext_resource path="res://minecraft.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 125.0
+height = 278.0
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.262745, 0.85098, 0.0980392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.835294, 0.192157, 0.192157, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 1855.77
+
+[node name="Red" type="KinematicBody2D"]
+position = Vector2( 28, 2 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.569388, 0.64875 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+margin_left = 1422.0
+margin_top = -2.0
+margin_right = 1940.0
+margin_bottom = 93.0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+step = 10.0
+value = 100.0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 1236.0
+margin_top = 5.0
+margin_right = 1428.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 6 )
+text = "анти 
+шайлушай"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

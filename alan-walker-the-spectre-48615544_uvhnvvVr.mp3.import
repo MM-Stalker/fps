@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/alan-walker-the-spectre-48615544_uvhnvvVr.mp3-1764e202854d3fec72359d9c2cbecd7d.mp3str"
+
+[deps]
+
+source_file="res://alan-walker-the-spectre-48615544_uvhnvvVr.mp3"
+dest_files=[ "res://.import/alan-walker-the-spectre-48615544_uvhnvvVr.mp3-1764e202854d3fec72359d9c2cbecd7d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
